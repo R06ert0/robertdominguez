@@ -84,6 +84,7 @@
     --my-black: #151515;
     --my-red: #CD533B;
     --my-dark-blue: #0A369D;
+    --my-box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -104,6 +105,7 @@ time, mark, audio, video {
     border: 0;
     vertical-align: baseline;
     outline: none;
+    list-style: none;
 }
 
 h1 {
@@ -117,4 +119,8 @@ p {
 button {
     cursor: pointer;
     font-family: Turret Road;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
