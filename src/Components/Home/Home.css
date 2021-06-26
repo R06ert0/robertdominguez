@@ -8,6 +8,7 @@
     height: 100vh;
     background-color: rgba(252,165,0, 0.9);
     overflow: hidden;
+    max-height: 950px;
 }
 
 .All-home::before {
@@ -63,12 +64,13 @@
 
 .All-home .Big-button:hover::before {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -2px;
+    top: -2px;
     z-index: -1;
     content: '';
     width: 0;
     height: 100%;
+    border: 2px solid var(--my-white);
     background-color: var(--my-white);   
     animation: 0.5s ease Spread forwards;
 }
