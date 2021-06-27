@@ -31,7 +31,7 @@ class About extends React.Component {
     render() {
         return (
             <div className="All-about">
-                <div className='stretcher'>
+                <div className='Stretcher'>
                     <h1>O MNĚ</h1>
                     <div className="Blue-rectangle">
                         <div className="Arrow-up" style={{display: this.state.textOrSkill ? 'none' : 'block'}}></div>
@@ -104,7 +104,7 @@ class Content extends React.Component {
 
     render() {
         return (
-            <div style={{width:100 + '%', height: 87 + '%', overflowY: 'scroll', display: 'flex'}}>
+            <div className="Biggest-content-div">
                 {this.toggleContent()}
             </div>
         )
@@ -117,7 +117,7 @@ class Skill extends React.Component {
             <div className="Skill">
                 <p>{this.props.name}</p>
                 <div className="Skill-bar">
-                    <div className="Skill-inner-bar" style={{width: this.props.percentage + '%', animationDuration: (this.props.percentage / 50) + 's'}}></div>
+                    <div className="Skill-inner-bar" style={{width: this.props.percentage + '%', animationDuration: (this.props.percentage / 75) + 's'}}></div>
                 </div>
             </div>
         )

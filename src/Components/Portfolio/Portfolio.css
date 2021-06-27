@@ -1,0 +1,144 @@
+.All-portfolio {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--my-orange);
+    max-height: 950px;
+    min-height: 900px;
+}
+
+.All-portfolio h1 {
+    position: absolute;
+    margin: 0 auto;
+    top: 110px;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.All-portfolio .Projects-div {
+    position: relative;
+    width: 1730px;
+    height: 313px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.All-portfolio .Projects-div .Arrow-left {
+    position: absolute;
+    height: 95px;
+    width: 95px;
+    background-image: url('../../Assets/Arrow-left.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    left: -95px;
+    top: 107px;
+    cursor: pointer;
+}
+
+.All-portfolio .Projects-div .Arrow-right {
+    position: absolute;
+    height: 95px;
+    width: 95px;
+    background-image: url('../../Assets/Arrow-right.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    right: -95px;
+    top: 107px;
+    cursor: pointer;
+}
+
+.All-portfolio .All-project {
+    border: 3px solid var(--my-black);
+    border-radius: 5px;
+    display: flex;
+    width: fit-content;
+    height: 307px;
+    justify-content: center;
+}
+
+.All-portfolio .All-project .Details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6.5px 30px;
+    background-color: var(--my-black);
+    color: var(--my-white);
+    width: 0;
+    animation: Wide-details 0.5s ease forwards;
+    overflow: hidden;
+}
+
+@keyframes Wide-details {
+    0% {}
+    100% {width: 1144px;}
+}
+
+.All-portfolio .All-project .Details a {
+    color: var(--my-white);
+}
+
+.All-portfolio .All-project .Details a:hover {
+    color: var(--my-orange);
+    transition: 0.3s ease;
+}
+
+.All-portfolio .All-project .Details .X {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 10px;
+    right: 10px;
+    background-image: url('../../Assets/X.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+
+
+
+
+/* THUMBNAIL IMAGE CHANGERS */
+.All-portfolio .Thumbnail-onlinecourses {
+    background-image: url('../../Assets/OnlineCourses.png');
+}
+
+.All-portfolio .Thumbnail-farmersbrothers {
+    background-image: url('../../Assets/FarmersBrothers.png');
+}
+
+/* BG IMAGES CHANGERS */
+.All-portfolio .Technology-HTML {
+    background-image: url('../../Assets/HTML5.svg');
+}
+
+.All-portfolio .Technology-CSS {
+    background-image: url('../../Assets/CSS3.svg');
+}
+
+.All-portfolio .Technology-JavaScript {
+    background-image: url('../../Assets/JavaScript.svg');
+}
+
+.All-portfolio .Technology-TypeScript {
+    background-image: url('../../Assets/TypeScript.svg');
+}
+
+.All-portfolio .Technology-Angular {
+    background-image: url('../../Assets/Angular.svg');
+}
+
+.All-portfolio .Technology-ReactJS {
+    background-image: url('../../Assets/React.svg');
+}
+
+.All-portfolio .Technology-NestJS {
+    background-image: url('../../Assets/NestJS.svg');
+}
+
+.All-portfolio .Technology-PostgreSQL {
+    background-image: url('../../Assets/Postgresql.svg');
+}

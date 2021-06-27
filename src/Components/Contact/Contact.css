@@ -1,0 +1,35 @@
+.All-contact {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--my-blue);
+    max-height: 950px;
+    min-height: 900px;
+}
+
+.All-contact .Triangle {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 110px solid  var(--my-orange);
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+}
+
+.All-contact h1 {
+    color: var(--my-white);
+    position: absolute;
+    margin: 0 auto;
+    top: 220px;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.All-contact .Footer {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    background-color: var(--my-black);
+    bottom: -120px;
+}
