@@ -22,12 +22,57 @@ class Portfolio extends React.Component {
                 },
                 {
                     thumbnail: '',
-                    name: '',
+                    name: 'Nazdar',
                     technologies: ['HTML', 'CSS'],
                     description: '',
                     link: ''
+                },
+                {
+                    thumbnail: '',
+                    name: 'Ahoj',
+                    technologies: ['HTML', 'JavaScript'],
+                    description: '',
+                    link: ''
+                },
+                {
+                    thumbnail: '',
+                    name: 'Prosím',
+                    technologies: ['HTML', 'ReactJS'],
+                    description: '',
+                    link: ''
                 }
-            ]
+            ],
+            allProjectsOff: true
+        }
+
+        this.toggleAllProjectsOff = this.toggleAllProjectsOff.bind(this);
+    }
+
+    toggleAllProjectsOff() {
+        this.setState(prevState => ({
+            allProjectsOff: !prevState.allProjectsOff
+        }))
+    }
+
+    scrollLeft() { // Its infinitive loop :D
+        let counter;
+        const move = setInterval(() => {
+            document.getElementById('Projects-div').scrollLeft -= 2;
+            counter++;
+        }, 1);
+        if (counter === 278) {
+            clearInterval(move);
+        }
+    }
+
+    scrollRight() {
+        let counter;
+        const move = setInterval(() => {
+            document.getElementById('Projects-div').scrollLeft += 2;
+            counter++;
+        }, 1);
+        if (counter === 278) {
+            clearInterval(move);
         }
     }
 
@@ -36,13 +81,16 @@ class Portfolio extends React.Component {
             <div className="All-portfolio">
                 <div className="Stretcher">
                     <h1>PORTFOLIO</h1>
-                    <div className="Projects-div">
-                        <div className="Arrow-left"></div>
-                        <div className="Arrow-right"></div>
-                        {this.state.projects.map(project => {
-                            return <Project key={project.name} thumbnail={project.thumbnail} name={project.name} technologies={project.technologies}
-                            description={project.description} link={project.link} />
-                        })}
+                    <div className="Outer-projects-div">
+                        <div onClick={this.scrollLeft} className="Arrow-left"></div>
+                        <div onClick={this.scrollRight} className="Arrow-right"></div>
+                        <div id="Projects-div">
+                            {this.state.projects.map(project => {
+                                return <Project key={project.name} allProjectsOff={this.state.allProjectsOff} onToggleOtherProjectsOff={this.toggleAllProjectsOff}
+                                    thumbnail={project.thumbnail} name={project.name} technologies={project.technologies}
+                                    description={project.description} link={project.link} />
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -64,9 +112,10 @@ class Project extends React.Component {
         this.setState(prevState => ({
             visible: !prevState.visible
         }))
+        this.props.onToggleOtherProjectsOff();
     }
 
-    technologiesImageConvertor() { 
+    technologiesImageConvertor() {
         let technologies = [];
         this.props.technologies.map(technologie => {
 
@@ -85,21 +134,26 @@ class Project extends React.Component {
 
     render() {
         return (
-            <div className="All-project" style={{position: this.state.visible ? 'absolute' : 'relative',
-            zIndex: this.state.visible ? '1' : ''}}>
-                <div onClick={this.toggleDetailVisibility} style={{width: 550 + 'px', height: 100 + '%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain', backgroundColor: 'var(--my-black)', minWidth: 550 + 'px', cursor: 'pointer'}}
-                className={'Thumbnail-' + this.props.thumbnail}></div>
-                <div className="Details" style={{display: this.state.visible ? 'flex' : 'none'}}>
-                    <div style={{display: 'flex'}}>
+            <div className="All-project" style={{
+                position: this.state.visible ? 'absolute' : 'relative',
+                display: this.props.allProjectsOff || this.state.visible ? 'flex' : 'none',
+                zIndex: this.state.visible ? '1' : ''
+            }}>
+                <div onClick={this.toggleDetailVisibility} style={{
+                    width: 550 + 'px', height: 100 + '%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain', backgroundColor: 'var(--my-black)', minWidth: 550 + 'px', cursor: 'pointer'
+                }}
+                    className={'Thumbnail-' + this.props.thumbnail}></div>
+                <div className="Details" style={{ display: this.state.visible ? 'flex' : 'none' }}>
+                    <div style={{ display: 'flex' }}>
                         <p style={{ fontWeight: 900, marginRight: 30 + 'px', alignSelf: 'center' }}>TECHNOLOGIE:</p>
                         {this.technologiesImageConvertor()}
                     </div>
                     <p style={{ fontWeight: 700 }}><span style={{ fontWeight: 900 }}>POPIS:</span>&#160;{this.props.description}</p>
-                    <div style={{display: 'flex'}}>
+                    <div style={{ display: 'flex' }}>
                         <p style={{ fontWeight: 900 }}>ODKAZ: </p>
-                        <a target="blank" style={{ fontWeight: 700, fontSize: 35 + 'px', textDecoration: 'none'}}
-                        href={this.props.link}>&#160;{this.props.link}</a>
+                        <a target="blank" style={{ fontWeight: 700, fontSize: 35 + 'px', textDecoration: 'none' }}
+                            href={this.props.link}>&#160;{this.props.link}</a>
                     </div>
                     <div onClick={this.toggleDetailVisibility} className="X"></div>
                 </div>

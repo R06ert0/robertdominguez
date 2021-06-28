@@ -15,15 +15,14 @@
     text-decoration: underline;
 }
 
-.All-portfolio .Projects-div {
+.All-portfolio .Outer-projects-div {
     position: relative;
-    width: 1730px;
-    height: 313px;
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: center;
 }
 
-.All-portfolio .Projects-div .Arrow-left {
+.All-portfolio .Outer-projects-div .Arrow-left {
     position: absolute;
     height: 95px;
     width: 95px;
@@ -31,12 +30,12 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    left: -95px;
+    left: 0;
     top: 107px;
     cursor: pointer;
 }
 
-.All-portfolio .Projects-div .Arrow-right {
+.All-portfolio .Outer-projects-div .Arrow-right {
     position: absolute;
     height: 95px;
     width: 95px;
@@ -44,10 +43,21 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    right: -95px;
+    right: 0;
     top: 107px;
     cursor: pointer;
 }
+
+.All-portfolio #Projects-div {
+    position: relative;
+    width: 1730px;
+    height: 313px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    gap: 31px;
+}
+
 
 .All-portfolio .All-project {
     border: 3px solid var(--my-black);
@@ -59,6 +69,7 @@
 }
 
 .All-portfolio .All-project .Details {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -72,7 +83,7 @@
 
 @keyframes Wide-details {
     0% {}
-    100% {width: 1144px;}
+    100% {width: 1114px;}
 }
 
 .All-portfolio .All-project .Details a {
