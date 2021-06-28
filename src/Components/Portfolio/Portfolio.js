@@ -21,22 +21,43 @@ class Portfolio extends React.Component {
                     link: 'http://farmersbrothers.cz/'
                 },
                 {
-                    thumbnail: '',
+                    thumbnail: 'test1',
                     name: 'Nazdar',
                     technologies: ['HTML', 'CSS'],
                     description: '',
                     link: ''
                 },
                 {
-                    thumbnail: '',
+                    thumbnail: 'test2',
                     name: 'Ahoj',
                     technologies: ['HTML', 'JavaScript'],
                     description: '',
                     link: ''
                 },
                 {
-                    thumbnail: '',
+                    thumbnail: 'test3',
                     name: 'Prosím',
+                    technologies: ['HTML', 'ReactJS'],
+                    description: '',
+                    link: ''
+                },
+                {
+                    thumbnail: 'test3',
+                    name: 'Prosímvás',
+                    technologies: ['HTML', 'ReactJS'],
+                    description: '',
+                    link: ''
+                },
+                {
+                    thumbnail: 'test4',
+                    name: 'Prosímvás4',
+                    technologies: ['HTML', 'ReactJS'],
+                    description: '',
+                    link: ''
+                },
+                {
+                    thumbnail: 'test5',
+                    name: 'Prosímvás5',
                     technologies: ['HTML', 'ReactJS'],
                     description: '',
                     link: ''
@@ -54,26 +75,26 @@ class Portfolio extends React.Component {
         }))
     }
 
-    scrollLeft() { // Its infinitive loop :D
-        let counter;
-        const move = setInterval(() => {
-            document.getElementById('Projects-div').scrollLeft -= 2;
-            counter++;
+    scrollLeft() {
+        let scrollAmount = 0;
+        let moveID = setInterval(() => {
+            document.getElementById('Projects-div').scrollLeft -= 20;
+            scrollAmount += 20;
+            if (scrollAmount >= 1760) {
+                clearInterval(moveID);
+            }
         }, 1);
-        if (counter === 278) {
-            clearInterval(move);
-        }
     }
 
     scrollRight() {
-        let counter;
-        const move = setInterval(() => {
-            document.getElementById('Projects-div').scrollLeft += 2;
-            counter++;
+        let scrollAmount = 0;
+        let moveID = setInterval(() => {
+            document.getElementById('Projects-div').scrollLeft += 20;
+            scrollAmount += 20;
+            if (scrollAmount >= 1760) {
+                clearInterval(moveID);
+            }
         }, 1);
-        if (counter === 278) {
-            clearInterval(move);
-        }
     }
 
     render() {
@@ -107,6 +128,7 @@ class Project extends React.Component {
             visible: false
         }
         this.toggleDetailVisibility = this.toggleDetailVisibility.bind(this);
+        this.goToLink = this.goToLink.bind(this);
     }
     toggleDetailVisibility() {
         this.setState(prevState => ({
@@ -132,6 +154,10 @@ class Project extends React.Component {
         return technologies;
     }
 
+    goToLink() {
+        window.open(this.props.link);
+    }
+
     render() {
         return (
             <div className="All-project" style={{
@@ -139,7 +165,7 @@ class Project extends React.Component {
                 display: this.props.allProjectsOff || this.state.visible ? 'flex' : 'none',
                 zIndex: this.state.visible ? '1' : ''
             }}>
-                <div onClick={this.toggleDetailVisibility} style={{
+                <div onClick={this.state.visible ? this.goToLink : this.toggleDetailVisibility} style={{
                     width: 550 + 'px', height: 100 + '%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain', backgroundColor: 'var(--my-black)', minWidth: 550 + 'px', cursor: 'pointer'
                 }}

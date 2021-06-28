@@ -47,7 +47,6 @@
     background-repeat: no-repeat;
     box-shadow: var(--my-box-shadow);
     backface-visibility: visible;
-    animation-fill-mode: ;
 }
 
 .All-about .Circle-text {
