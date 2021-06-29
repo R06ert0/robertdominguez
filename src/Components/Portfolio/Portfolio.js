@@ -99,7 +99,7 @@ class Portfolio extends React.Component {
 
     render() {
         return (
-            <div className="All-portfolio">
+            <div id="Portfolio-item" className="All-portfolio">
                 <div className="Stretcher">
                     <h1>PORTFOLIO</h1>
                     <div className="Outer-projects-div">

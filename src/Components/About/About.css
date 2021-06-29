@@ -28,7 +28,7 @@
     box-shadow: var(--my-box-shadow);
 }
 
-.All-about .Biggest-content-div {
+.All-about #Biggest-content-div {
     width: 100%;
     height: 87%;
     overflow-y: scroll;

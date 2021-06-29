@@ -4,7 +4,7 @@ import './Contact.css';
 class Contact extends React.Component {
     render() {
         return (
-            <div className="All-contact">
+            <div id="Contact-item" className="All-contact">
                 <div className="Stretcher">
                     <div className="Triangle"></div>
                     <h1>KONTAKT</h1>

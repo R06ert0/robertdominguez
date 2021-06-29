@@ -10,11 +10,12 @@ class About extends React.Component {
                 { name: 'HTML', percentage: 80 },
                 { name: 'CSS', percentage: 80 },
                 { name: 'JavaScript', percentage: 50 },
+                { name: 'TypeScript', percentage: 35 },
                 { name: 'Angular', percentage: 25 },
                 { name: 'ReactJS', percentage: 25 },
+                { name: 'NestJS', percentage: 20 },
                 { name: 'Git', percentage: 25 },
                 { name: 'Figma', percentage: 50 },
-                { name: 'NestJS', percentage: 20 },
                 { name: 'Blender', percentage: 25 }
             ]
         }
@@ -28,16 +29,40 @@ class About extends React.Component {
         }));
     }
 
+    scrollUp() {
+        let scrollAmount = 0;
+        let moveID = setInterval(() => {
+            document.getElementById('Biggest-content-div').scrollTop -= 5;
+            scrollAmount += 5;
+            console.log(moveID);
+            if (scrollAmount >= 435) {
+                clearInterval(moveID);
+            }
+        }, 1);
+    }
+
+    scrollDown() {
+        let scrollAmount = 0;
+        let moveID = setInterval(() => {
+            document.getElementById('Biggest-content-div').scrollTop += 5;
+            scrollAmount += 5;
+            console.log(moveID);
+            if (scrollAmount >= 435) {
+                clearInterval(moveID);
+            }
+        }, 1);
+    }
+
     render() {
         return (
-            <div className="All-about">
+            <div id="About-item" className="All-about">
                 <div className='Stretcher'>
                     <h1>O MNĚ</h1>
                     <div className="Blue-rectangle">
-                        <div className="Arrow-up" style={{display: this.state.textOrSkill ? 'none' : 'block'}}></div>
+                        <div onClick={this.scrollUp} className="Arrow-up" style={{ display: this.state.textOrSkill ? 'none' : 'block' }}></div>
                         <Circle onClick={this.toggleTextOrSkill} textOrSkill={this.state.textOrSkill} />
                         <Content skillSet={this.state.skillSet} textOrSkill={this.state.textOrSkill} />
-                        <div className="Arrow-down" style={{display: this.state.textOrSkill ? 'none' : 'block'}}></div>
+                        <div onClick={this.scrollDown} className="Arrow-down" style={{ display: this.state.textOrSkill ? 'none' : 'block' }}></div>
                     </div>
                 </div>
             </div>
@@ -79,8 +104,10 @@ class Circle extends React.Component {
 class Content extends React.Component {
     toggleContent() {
         const contentText = (
-            <div style={{ fontWeight: 700, width: 80 + '%', height: 80 + '%', margin: 'auto auto auto 190px',
-            display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+            <div style={{
+                fontWeight: 700, width: 80 + '%', height: 80 + '%', margin: 'auto auto auto 190px',
+                display: 'flex', flexDirection: 'column', justifyContent: 'center'
+            }}>
                 <p>Jsem začínající programátor. Baví mě jak kód, tak design.
                     Naplňuje mě vidět, jak se z ničeho tvoří něco, co ještě k tomu dává smysl a dobře to vypadá.<br></br>
                     Zaměřuji se na webové stránky a webové aplikace.
@@ -104,7 +131,7 @@ class Content extends React.Component {
 
     render() {
         return (
-            <div className="Biggest-content-div">
+            <div id="Biggest-content-div">
                 {this.toggleContent()}
             </div>
         )
@@ -117,7 +144,7 @@ class Skill extends React.Component {
             <div className="Skill">
                 <p>{this.props.name}</p>
                 <div className="Skill-bar">
-                    <div className="Skill-inner-bar" style={{width: this.props.percentage + '%', animationDuration: (this.props.percentage / 75) + 's'}}></div>
+                    <div className="Skill-inner-bar" style={{ width: this.props.percentage + '%', animationDuration: (this.props.percentage / 75) + 's' }}></div>
                 </div>
             </div>
         )
