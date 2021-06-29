@@ -5,6 +5,7 @@
     background-color: var(--my-orange);
     max-height: 950px;
     min-height: 900px;
+    padding-bottom: 110px;
 }
 
 .All-portfolio h1 {
@@ -31,7 +32,7 @@
     background-size: contain;
     background-position: center;
     left: 0;
-    top: 107px;
+    top: 125px;
     cursor: pointer;
 }
 
@@ -44,28 +45,34 @@
     background-size: contain;
     background-position: center;
     right: 0;
-    top: 107px;
+    top: 125px;
     cursor: pointer;
 }
 
 .All-portfolio #Projects-div {
     position: relative;
-    width: 1730px;
-    height: 313px;
+    width: 1760px;
+    height: 350px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     overflow-x: scroll;
-    gap: 31px;
 }
 
-
 .All-portfolio .All-project {
+    position: relative;
     border: 3px solid var(--my-black);
     border-radius: 5px;
     display: flex;
     width: fit-content;
     height: 307px;
     justify-content: center;
+    margin: 0 15px;
+}
+
+.All-portfolio .All-project:hover {
+    box-shadow:  4px 4px 4px var(--my-dark-grey);
+    transition: 0.3s ease;
 }
 
 .All-portfolio .All-project .Details {
@@ -108,7 +115,20 @@
     cursor: pointer;
 }
 
+.All-portfolio .All-project .Details .X:hover {
+    transform: rotate(360deg);
+    transition: 0.3s linear;
+}
 
+.All-portfolio .Triangle {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 110px solid  var(--my-orange);
+    border-left: 50vw solid var(--my-blue);
+    border-right: 50vw solid var(--my-blue);
+}
 
 
 

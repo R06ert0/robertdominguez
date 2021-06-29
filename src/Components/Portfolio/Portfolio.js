@@ -114,6 +114,7 @@ class Portfolio extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className="Triangle"></div>
             </div>
         )
     }

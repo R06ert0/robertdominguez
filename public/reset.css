@@ -108,6 +108,10 @@ time, mark, audio, video {
     list-style: none;
 }
 
+*:focus {
+    outline: none;
+}
+
 h1 {
     font-size: 60px;
 }

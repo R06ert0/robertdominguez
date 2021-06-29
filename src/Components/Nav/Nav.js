@@ -28,11 +28,15 @@ class Nav extends React.Component {
     render() {
         return (
             <nav className="All-nav">
-                <div onClick={this.scrollToHome} className="LOGO"></div>
-                <li onClick={this.scrollTo}>DOMŮ</li>
-                <li onClick={this.scrollTo}>O MNĚ</li>
-                <li onClick={this.scrollTo}>PORTFOLIO</li>
-                <li onClick={this.scrollTo}>KONTAKT</li>
+                <div className="Stretcher">
+                    <div style={{display: 'flex', height: 100 + '%', width: 100 + '%', justifyContent: 'flex-start', alignItems: 'center'}}>
+                        <div onClick={this.scrollToHome} className="LOGO"></div>
+                        <li onClick={this.scrollTo}>DOMŮ</li>
+                        <li onClick={this.scrollTo}>O MNĚ</li>
+                        <li onClick={this.scrollTo}>PORTFOLIO</li>
+                        <li onClick={this.scrollTo}>KONTAKT</li>
+                    </div>
+                </div>
             </nav>
         )
     }

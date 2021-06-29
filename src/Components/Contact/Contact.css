@@ -7,23 +7,92 @@
     min-height: 900px;
 }
 
-.All-contact .Triangle {
-    position: absolute;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-top: 110px solid  var(--my-orange);
-    border-left: 50vw solid transparent;
-    border-right: 50vw solid transparent;
-}
-
 .All-contact h1 {
     color: var(--my-white);
     position: absolute;
     margin: 0 auto;
-    top: 220px;
+    top: 110px;
     font-weight: 900;
     text-decoration: underline;
+}
+
+.All-contact form {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.All-contact input {
+    width: 580px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0 10px;
+}
+
+.All-contact input::placeholder {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--my-dark-grey);
+    font-family: Turret Road;
+}
+
+.All-contact textarea {
+    width: 580px;
+    height: 180px;
+    resize: none;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.All-contact textarea::placeholder {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--my-dark-grey);
+    font-family: Turret Road;
+}
+
+.All-contact form button {
+    position: relative;
+    width: 185px;
+    height: 58px;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--my-white);
+    background-color: transparent;
+    border: 4px solid var(--my-white);
+    z-index: 1;
+}
+
+.All-contact form button:hover {
+    color: black;
+    mix-blend-mode: screen;
+}
+
+.All-contact form button::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background-color: var(--my-white);
+    transition: 0.3s ease;
+    filter: blur(20px);
+}
+
+.All-contact form button:hover::before {
+    width: 101%;
+    height: 101%;
+    left: 0;
+    top: 0;
+    filter: blur(0);
+
 }
 
 .All-contact .Footer {
@@ -32,4 +101,54 @@
     height: 120px;
     background-color: var(--my-black);
     bottom: -120px;
+}
+
+.All-contact .Footer p {
+    margin-left: 56px;
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--my-white);
+}
+
+.All-contact .Footer .Icons {
+    margin-right: 56px;
+    display: flex;
+    gap: 20px;
+}
+
+.All-contact .Inner-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.All-contact .Footer .Linked-in {
+    width: 60px;
+    height: 60px;
+    background-image: url('../../Assets/LinkedIn.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.All-contact .Footer .Linked-in:hover {    
+    background-image: url('../../Assets/LinkedIn-filled.svg');
+    transition: 0.5s ease;
+}
+
+.All-contact .Footer .Facebook {
+    width: 60px;
+    height: 60px;
+    background-image: url('../../Assets/Facebook.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.All-contact .Footer .Facebook:hover {
+    background-image: url('../../Assets/Facebook-filled.svg');
+    transition: 0.5s ease;
 }
