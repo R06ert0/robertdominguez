@@ -23,7 +23,8 @@
     gap: 26px;
 }
 
-.All-contact input {
+.All-contact input {  
+    font-family: Turret Road;
     width: 580px;
     height: 50px;
     border-radius: 5px;
@@ -40,6 +41,7 @@
 }
 
 .All-contact textarea {
+    font-family: Turret Road;
     width: 580px;
     height: 180px;
     resize: none;
@@ -73,26 +75,17 @@
     mix-blend-mode: screen;
 }
 
-.All-contact form button::before {
+.All-contact form button:hover::before {
+    position: absolute;
+    left: -2px;
+    top: -2px;
     z-index: -1;
     content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
     width: 0;
-    height: 0;
-    background-color: var(--my-white);
-    transition: 0.3s ease;
-    filter: blur(20px);
-}
-
-.All-contact form button:hover::before {
-    width: 101%;
-    height: 101%;
-    left: 0;
-    top: 0;
-    filter: blur(0);
-
+    height: 100%;
+    border: 2px solid var(--my-white);
+    background-color: var(--my-white);   
+    animation: 0.5s ease Spread forwards;
 }
 
 .All-contact .Footer {
@@ -151,4 +144,10 @@
 .All-contact .Footer .Facebook:hover {
     background-image: url('../../Assets/Facebook-filled.svg');
     transition: 0.5s ease;
+}
+
+.All-contact #Hrnekmedu {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
 }

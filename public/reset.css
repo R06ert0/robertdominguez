@@ -139,3 +139,9 @@ button {
     height: 100%;
     max-width: 1920px;
 }
+
+/* PRELOADING IMAGES */
+body::after {
+    display: none;
+    /* content: url('...image...') url('...image...') url('...image...') */
+}
