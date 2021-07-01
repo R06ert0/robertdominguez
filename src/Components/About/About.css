@@ -26,6 +26,7 @@
     border-radius: 5px;
     align-items: center;
     box-shadow: var(--my-box-shadow);
+    transform: translateX(75px);
 }
 
 .All-about #Biggest-content-div {
@@ -99,6 +100,7 @@
     border: 3px solid var(--my-white);
     margin: 7.5px 30px;
 }
+
 .All-about .Skill-inner-bar {
     position: absolute;
     height: 100%;
@@ -140,3 +142,12 @@
     background-size: contain;
 }
 
+/* MEDIA QUERIES */
+@media screen and (max-width: 1366px){
+    .All-about {
+        width: 100vw;
+        height: 100vh;
+        min-height: 650px;
+        max-height: 700px;
+    }
+}

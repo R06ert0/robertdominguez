@@ -23,7 +23,7 @@ class Contact extends React.Component {
 
             thanks.className = 'Form-thanks';
             thanks.style.transform = 'translateX(-1000px)';
-            thanks.style.animation = 'Slide-in 1s ease forwards';
+            thanks.style.animation = 'Slide-in 0.75s ease forwards';
 
             form.style.display = "none";
 
@@ -56,6 +56,7 @@ class Contact extends React.Component {
                     // THIS OUTER TIMEOUT IS NEEDED BECAUSE ERROR RESPONSE COMES, IN CONTRAST TO SUCCES RESPONSE, IMMEDIATELY...
                     setTimeout(() => {
                         console.log('FAILED...', error);
+                        text.style.color = 'var(--my-red)';
                         text.innerText = 'Něco je špatně!';
                         icon.className = 'Thanks-icon-wrong';
 

@@ -6,7 +6,7 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-color: rgba(252,165,0, 0.9);
+    background-color: rgba(252, 165, 0, 0.9);
     overflow: hidden;
     max-height: 950px;
     min-height: 900px;
@@ -14,10 +14,10 @@
 
 .All-home::before {
     z-index: -2;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
-    background-image: url('../../Assets/CodeBackscreen.jpg');
+    background-image: url("../../Assets/CodeBackscreen.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -25,8 +25,12 @@
 }
 
 @keyframes Move-home {
-    0% {transform: scale(1);}
-    100% {transform: scale(1.5);}
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
 }
 
 .All-home h1 {
@@ -56,7 +60,7 @@
 }
 
 .All-home .Big-button::after {
-    content: '  ↓';
+    content: "  ↓";
     transform: rotate(45deg);
     font-weight: 900;
     width: 80px;
@@ -68,15 +72,170 @@
     left: -2px;
     top: -2px;
     z-index: -1;
-    content: '';
+    content: "";
     width: 0;
     height: 100%;
     border: 2px solid var(--my-white);
-    background-color: var(--my-white);   
+    background-color: var(--my-white);
     animation: 0.5s ease Spread forwards;
 }
 
 @keyframes Spread {
-    0% {}
-    100% {width: 100%;}
+    0% {
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.All-home .Arrows-down {
+    display: none;
+}
+
+.All-home .Arrow-1,
+.All-home .Arrow-2,
+.All-home .Arrow-3,
+.All-home .Arrow-4 {
+    width: 170px;
+    height: 40px;
+    background-image: url("../../Assets/Arrow-down-home.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1366px) { /* 150% */
+    .All-home {
+        width: 100vw;
+        height: 100vh;
+        min-height: 650px;
+        max-height: 700px;
+    }
+
+    .All-home h1 {
+        font-size: 43px;
+    }
+
+    .All-home .Big-button {
+        font-size: 36px;
+        margin-top: 90px;
+        border: 4px solid var(--my-white);
+        width: 317px;
+        height: 64px;
+    }
+}
+
+@media screen and (max-width: 1000px) { /* 200% */
+    .All-home {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 800px) { /* 250% - ... */
+    .All-home {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+        justify-content: space-around;
+    }
+
+    .All-home .Big-button {
+        font-size: 40px;
+        margin-top: 0;
+        width: 300px;
+        height: 70px;
+        border: 5px solid var(--my-white);
+        border-radius: 4px;
+        animation: Blink-button 1s ease alternate infinite;
+    }
+
+    @keyframes Blink-button {
+        to {
+            transform: scale(1.2);
+        }
+    }
+
+    .All-home .Big-button:hover {
+        color: var(--my-white);
+    }
+
+    .All-home .Big-button:focus {
+        color: black;
+        mix-blend-mode: screen;
+        background-color: var(--my-white);
+    }
+
+    .All-home .Big-button:hover::before {
+        display: none;
+    }
+
+    .All-home .Big-button::after {
+        content: '';
+    }
+
+    .All-home .Arrows-down {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .All-home .Arrow-1 {
+        position: relative;
+        top: 0;
+        display: flex;
+        animation: Fade-in-out-arrow 2s ease infinite;
+        opacity: 1;
+    }
+
+    .All-home .Arrow-2 {
+        position: relative;
+        top: 0;
+        display: flex;
+        animation: Fade-in-out-arrow 2s ease 0.2s infinite;
+        opacity: 1;
+    }
+
+    .All-home .Arrow-3 {
+        position: relative;
+        top: 0;
+        display: flex;
+        animation: Fade-in-out-arrow 2s ease 0.4s infinite;
+        opacity: 1;
+    }
+
+    .All-home .Arrow-4 {
+        position: relative;
+        top: 0;
+        display: flex;
+        animation: Fade-in-out-arrow 2s ease 0.6s infinite;
+        opacity: 1;
+    }
+
+    @keyframes Fade-in-out-arrow {
+        to {
+            opacity: 0;
+            transform: translateY(200%);
+        }
+    }
+
+    .All-home h1 {
+        margin-top: 10%;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .All-home span::before {
+        content: '\a\a';
+        white-space: pre;
+    }
+
+    .All-home .Second-h1 {
+        display: none;
+    }
 }

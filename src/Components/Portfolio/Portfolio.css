@@ -174,3 +174,13 @@
 .All-portfolio .Technology-PostgreSQL {
     background-image: url('../../Assets/Postgresql.svg');
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1366px){
+    .All-portfolio {
+        width: 100vw;
+        height: 100vh;
+        min-height: 650px;
+        max-height: 700px;
+    }
+}

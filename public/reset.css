@@ -145,3 +145,14 @@ body::after {
     display: none;
     /* content: url('...image...') url('...image...') url('...image...') */
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1366px) {
+    h1 {
+        font-size: 43px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+}

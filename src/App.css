@@ -1,0 +1,33 @@
+#Almighty-div .Hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    #Almighty-div .Hamburger {
+        position: fixed;
+        height: 100px;
+        width: 100px;
+        bottom: 0;
+        right: 20px;
+        background-image: url("../src/Assets/Hamburger.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+        z-index: 6;
+        animation: Fade-in-burger 0.5s ease;
+    }
+
+    @keyframes Fade-in-burger {
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes Fade-out-burger {
+        to {
+            opacity: 0;
+            display: none;
+        }
+    }
+}
