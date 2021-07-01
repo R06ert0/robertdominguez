@@ -71,8 +71,7 @@
 }
 
 .All-contact form button:hover {
-    color: black;
-    mix-blend-mode: screen;
+    color: var(--my-blue);
 }
 
 .All-contact form button:hover::before {

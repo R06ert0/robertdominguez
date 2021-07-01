@@ -9,9 +9,12 @@ class Contact extends React.Component {
         if (document.getElementById('Hrnekmedu').value) {
             console.log('Smůla: ' + document.getElementById('Hrnekmedu').value);
         } else {
-            emailjs.sendForm('service_64bfn8b', 'template_ik30sts', e.target, 'user_97wrQev3ZYhN9j8ECOZFE')
+            let form = document.getElementById('Form');
+            form.style.filter = "blur(5px)";
+            emailjs.sendForm('r06ert-je-developer', 'simple-template-01', e.target, 'user_97wrQev3ZYhN9j8ECOZFE')
                 .then(response => {
                     console.log('SUCCESS!', response.status, response.text);
+                    form.style.filter = "blur(0)";
                 }, error => {
                     console.log('FAILED...', error);
                 });
@@ -33,7 +36,7 @@ class Contact extends React.Component {
             <div id="Contact-item" className="All-contact">
                 <div className="Stretcher">
                     <h1>KONTAKT</h1>
-                    <form onSubmit={this.submitForm}>
+                    <form id="Form" onSubmit={this.submitForm}>
                         <input name="name" type="text" placeholder="Tvoje jméno" required></input>
                         <input id="Hrnekmedu" name="subject" type="text" autoComplete="off" placeholder="Hrnek medu"></input>
                         <input name="email" type="email" placeholder="Tvůj e-mail" required></input>
