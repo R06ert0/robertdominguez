@@ -52,8 +52,28 @@ class Contact extends React.Component {
                             form.style.display = "flex";
                         }, 1100);
                     }, 1000);
-                }, error => {
-                    console.log('FAILED...', error);
+                }).catch(error => {
+                    // THIS OUTER TIMEOUT IS NEEDED BECAUSE ERROR RESPONSE COMES, IN CONTRAST TO SUCCES RESPONSE, IMMEDIATELY...
+                    setTimeout(() => {
+                        console.log('FAILED...', error);
+                        text.innerText = 'Něco je špatně!';
+                        icon.className = 'Thanks-icon-wrong';
+
+                        // ...WAITING 1S FOR USER TO SEE TEXT AND ANIMATION...
+                        setTimeout(() => {
+                            //...SLIDING THANKS ELEMENT OUT...
+                            text.style.whiteSpace = "nowrap"
+                            thanks.style.opacity = 1;
+                            thanks.style.transform = 'translateX(0)';
+                            thanks.style.animation = 'Slide-out 1s ease forwards';
+
+                            // ...AND AFTER ANOTHER 1.1S (ENOUGH TO END ALL ANIMATION OF SLIDING OUT) REMOVING THANKS ELEMENT AND REVEALING FORM AGAIN
+                            setTimeout(() => {
+                                formEnvelope.removeChild(thanks);
+                                form.style.display = "flex";
+                            }, 1100);
+                        }, 1000);
+                    }, 1100);
                 });
         }
 
