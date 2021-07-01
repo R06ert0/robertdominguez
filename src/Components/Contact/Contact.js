@@ -9,12 +9,49 @@ class Contact extends React.Component {
         if (document.getElementById('Hrnekmedu').value) {
             console.log('Smůla: ' + document.getElementById('Hrnekmedu').value);
         } else {
+            // CREATING THANKS ELEMENT AND STYLINGIT TO SLIDE IN SMOOTHLY
+            let formEnvelope = document.getElementById('Form-envelope');
+            let thanks = document.createElement('div');
+            let icon = document.createElement('div');
+            let text = document.createElement('h3');
             let form = document.getElementById('Form');
-            form.style.filter = "blur(5px)";
+
+            icon.className = 'Thanks-icon';
+
+            text.className = 'Thanks-text';
+            text.innerText = 'Odesílání...';
+
+            thanks.className = 'Form-thanks';
+            thanks.style.transform = 'translateX(-1000px)';
+            thanks.style.animation = 'Slide-in 1s ease forwards';
+
+            form.style.display = "none";
+
+            thanks.appendChild(text);
+            thanks.appendChild(icon);
+            formEnvelope.appendChild(thanks);
+
             emailjs.sendForm('r06ert-je-developer', 'simple-template-01', e.target, 'user_97wrQev3ZYhN9j8ECOZFE')
                 .then(response => {
                     console.log('SUCCESS!', response.status, response.text);
-                    form.style.filter = "blur(0)";
+                    // IF MESSAGE IS SUCCESFULLY SENT, CHANGE TEXT TO 'Zpráva odeslána, díky!' AND IMAGE TO 'CHECK'...
+                    text.innerText = 'Zpráva odeslána, díky!';
+                    icon.className = 'Thanks-icon-done';
+
+                    // ...WAITING 1S FOR USER TO SEE TEXT AND ANIMATION...
+                    setTimeout(() => {
+                        //...SLIDING THANKS ELEMENT OUT...
+                        text.style.whiteSpace = "nowrap"
+                        thanks.style.opacity = 1;
+                        thanks.style.transform = 'translateX(0)';
+                        thanks.style.animation = 'Slide-out 1s ease forwards';
+
+                        // ...AND AFTER ANOTHER 1.1S (ENOUGH TO END ALL ANIMATION OF SLIDING OUT) REMOVING THANKS ELEMENT AND REVEALING FORM AGAIN
+                        setTimeout(() => {
+                            formEnvelope.removeChild(thanks);
+                            form.style.display = "flex";
+                        }, 1100);
+                    }, 1000);
                 }, error => {
                     console.log('FAILED...', error);
                 });
@@ -34,7 +71,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div id="Contact-item" className="All-contact">
-                <div className="Stretcher">
+                <div id="Form-envelope" className="Stretcher">
                     <h1>KONTAKT</h1>
                     <form id="Form" onSubmit={this.submitForm}>
                         <input name="name" type="text" placeholder="Tvoje jméno" required></input>
