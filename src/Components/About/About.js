@@ -104,10 +104,7 @@ class Circle extends React.Component {
 class Content extends React.Component {
     toggleContent() {
         const contentText = (
-            <div style={{
-                fontWeight: 700, width: 80 + '%', height: 80 + '%', margin: 'auto auto auto 190px',
-                display: 'flex', flexDirection: 'column', justifyContent: 'center'
-            }}>
+            <div className="Content-text">
                 <p>Jsem začínající programátor. Baví mě jak kód, tak design.
                     Naplňuje mě vidět, jak se z ničeho tvoří něco, co ještě k tomu dává smysl a dobře to vypadá.<br></br>
                     Zaměřuji se na webové stránky a webové aplikace.
@@ -117,7 +114,7 @@ class Content extends React.Component {
 
 
         const contentSkills = (
-            <div style={{ fontWeight: 900, width: 80 + '%', height: 100 + '%', margin: 'auto auto auto 190px' }}>
+            <div className="Content-skills">
                 {this.props.skillSet.map(skill => {
                     return <Skill key={skill.name} name={skill.name} percentage={skill.percentage} />
                 })}

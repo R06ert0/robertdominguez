@@ -51,17 +51,17 @@
 }
 
 .All-about .Circle-text {
-    background-image: url('../../Assets/Profile-picture.jpg');
+    background-image: url("../../Assets/Profile-picture.jpg");
 }
 
 .All-about .Circle-text::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: rgba(255,255,255,0.7);
-    background-image: url('../../Assets/Skill-level.svg');
+    background-color: rgba(255, 255, 255, 0.7);
+    background-image: url("../../Assets/Skill-level.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100px;
@@ -74,17 +74,21 @@
 }
 
 .All-about .Circle-skills {
-    background-image: url('../../Assets/Profile-picture-skills.jpg');
+    background-image: url("../../Assets/Profile-picture-skills.jpg");
 }
 
 .All-about .Circle-skills:hover {
-    background-image: url('../../Assets/Profile-picture-skills-full.jpg');
+    background-image: url("../../Assets/Profile-picture-skills-full.jpg");
     transition: 1s ease;
 }
 
 @keyframes FlipIt {
-    0% {transform: rotateY(0);}
-    100% {transform: rotateY(360deg);}
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
 }
 
 .All-about .Skill {
@@ -112,8 +116,11 @@
 }
 
 @keyframes Wide {
-    0% {}
-    100% {width: 0;}
+    0% {
+    }
+    100% {
+        width: 0;
+    }
 }
 
 .All-about .Arrow-up {
@@ -123,7 +130,7 @@
     position: absolute;
     top: 10px;
     right: 310px;
-    background-image: url('../../Assets/Arrow-up.svg');
+    background-image: url("../../Assets/Arrow-up.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -136,18 +143,255 @@
     position: absolute;
     bottom: 10px;
     right: 310px;
-    background-image: url('../../Assets/Arrow-down.svg');
+    background-image: url("../../Assets/Arrow-down.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
+.All-about .Content-text {
+    font-weight: 700;
+    width: 80%;
+    height: 80%;
+    margin: auto 2% auto 20%;
+    display: "flex";
+    flex-direction: "column";
+    justify-content: "center";
+}
+
+.All-about .Content-skills {
+    font-weight: 900;
+    width: 80%;
+    height: 100%;
+    margin: auto auto auto 190px;
+}
+
 /* MEDIA QUERIES */
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1366px) {
     .All-about {
         width: 100vw;
         height: 100vh;
         min-height: 650px;
         max-height: 700px;
+    }
+
+    .All-about .Blue-rectangle {
+        margin-top: 100px;
+        width: 750px;
+        height: 350px;
+        border-radius: 5px;
+        align-items: center;
+        box-shadow: var(--my-box-shadow);
+        transform: translateX(54px);
+    }
+
+    .All-about h1 {
+        top: 78px;
+    }
+
+    .All-about #Circle {
+        width: 216px;
+        height: 216px;
+        left: -108px;
+    }
+
+    .All-about .Skill-bar {
+        width: 387px;
+        height: 29px;
+        border: 2px solid var(--my-white);
+        margin: 5px 25px;
+    }
+
+    .All-about .Skill-inner-bar {
+        height: 100%;
+        left: -1px;
+        top: -1px;
+        border: 1.5px solid var(--my-white);
+    }
+
+    .All-about .Arrow-up {
+        height: 10px;
+        width: 20px;
+        top: 6px;
+        right: 230px;
+    }
+
+    .All-about .Arrow-down {
+        height: 10px;
+        width: 20px;
+        bottom: 6px;
+        right: 230px;
+    }
+
+    .All-about .Content-skills {
+        width: 80%;
+        height: 100%;
+        margin: auto auto auto 140px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    /* 200% */
+    .All-about {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+
+    .All-about .Blue-rectangle {
+        margin-top: 100px;
+        width: 550px;
+        height: 250px;
+        border-radius: 5px;
+        align-items: center;
+        box-shadow: var(--my-box-shadow);
+        transform: translateX(37.5px);
+    }
+
+    .All-about #Circle {
+        width: 150px;
+        height: 150px;
+        left: -75px;
+        animation: Blink-circle 1s ease alternate infinite;
+    }
+
+    .All-about .Circle-text::after {
+        display: none;
+    }
+
+    .All-about .Circle-skills:hover {
+        background-image: url("../../Assets/Profile-picture-skills.jpg");
+        transition: 0s;
+    }
+
+    .All-about .Content-text {
+        height: fit-content;
+    }    
+
+    .All-about .Skill-bar {
+        width: 250px;
+        height: 20px;
+        border: 2px solid var(--my-white);
+        margin: 3px 15px;
+    }
+
+    .All-about .Arrow-up {
+        top: 4px;
+        right: 26%;
+    }
+
+    .All-about .Arrow-down {
+        bottom: 4px;
+        right: 26%;
+    }
+    
+    .All-about .Content-skills {
+        width: 80%;
+        height: 100%;
+        margin: auto auto auto 105px;
+    }
+
+    @keyframes Blink-circle {
+        to {
+            transform: scale(1.1);
+        }
+    }
+}
+
+@media screen and (max-width: 800px), (max-width: 100vh) {
+    .All-about {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+
+    .All-about .Blue-rectangle {
+        margin-top: 20vh;
+        width: 90vw;
+        height: 70%;
+        border-radius: 1vh;
+        align-items: flex-end;
+        box-shadow: var(--my-box-shadow);
+        transform: translateX(0);
+    }
+
+    .All-about h1 {
+        top: 5vh;
+    }
+
+    .All-about #Circle {
+        top: -10vh;
+        left: calc(50% - 10vh);
+        width: 20vh;
+        height: 20vh;
+        animation: Blink-circle 1s ease alternate infinite;
+    }
+
+    .All-about .Skill-bar {
+        width: 50%;
+        height: 3vh;
+        border: 0.3vh solid var(--my-white);
+        margin: 0;
+    }
+
+    .All-about .Skill-inner-bar {
+        height: 100%;
+        left: -0.15vh;
+        top: -0.15vh;
+        border: 0.15vh solid var(--my-white);
+    }
+
+    .All-about .Arrow-up {
+        height: 1.5vh;
+        width: 3vh;
+        top: 13vh;
+        right: calc(50% - 1.5vh);
+    }
+
+    .All-about .Arrow-down {
+        height: 1.5vh;
+        width: 3vh;
+        bottom: 3vh;
+        right: calc(50% - 1.5vh);
+    }
+
+    .All-about #Biggest-content-div {
+        justify-content: center;
+        align-items: center;
+        height: 46vh;
+        padding: 7vh 0;
+    }
+
+    .All-about .Content-text {
+        text-align: center;
+        width: 90%;
+        height: fit-content;
+        margin: 0;
+    }
+
+    .All-about .Content-skills {
+        display: flex;
+        gap: 0.5vh;
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .All-about .Circle-text::after {
+        display: none;
+    }
+
+    .All-about .Circle-skills:hover {
+        background-image: url("../../Assets/Profile-picture-skills.jpg");
+        transition: 0s;
+    }
+
+    @keyframes Blink-circle {
+        to {
+            transform: scale(1.1) translateY(-1vh);
+        }
     }
 }

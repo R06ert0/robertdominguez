@@ -104,7 +104,7 @@ class Contact extends React.Component {
                     <div className="Footer">
                         <div className="Stretcher">
                             <div className="Inner-footer">
-                                <p>Copyright @ Robert Dominguez</p>
+                                <p><span className="Copyright">Copyright @</span> Robert Dominguez</p>
                                 <div className="Icons">
                                     <div onClick={this.goToLinkedIn} className="Linked-in"></div>
                                     <div onClick={this.goToFB} className="Facebook"></div>

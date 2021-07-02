@@ -67,6 +67,8 @@ class Portfolio extends React.Component {
         }
 
         this.toggleAllProjectsOff = this.toggleAllProjectsOff.bind(this);
+        this.scrollLeft = this.scrollLeft.bind(this);
+        this.scrollRight = this.scrollRight.bind(this);
     }
 
     toggleAllProjectsOff() {
@@ -76,32 +78,41 @@ class Portfolio extends React.Component {
     }
 
     scrollLeft() {
+        let distance = this.props.projectScrollDistance - this.props.projectWidth / 20;
         let scrollAmount = 0;
         let moveID = setInterval(() => {
             document.getElementById('Projects-div').scrollLeft -= 20;
             scrollAmount += 20;
-            if (scrollAmount >= 1760) {
+            if (scrollAmount >= distance) {
                 clearInterval(moveID);
             }
         }, 1);
     }
 
     scrollRight() {
+        let distance = this.props.projectScrollDistance - this.props.projectWidth / 20;
         let scrollAmount = 0;
         let moveID = setInterval(() => {
             document.getElementById('Projects-div').scrollLeft += 20;
             scrollAmount += 20;
-            if (scrollAmount >= 1760) {
+            if (scrollAmount >= distance) {
                 clearInterval(moveID);
             }
         }, 1);
+    }
+
+    mesureDimension() {
+        console.log(document.getElementById('Projects-div').offsetLeft);
+        console.log(document.getElementById('Projects-div').offsetWidth);
+        console.log(document.getElementById('Projects-div').scrollLeft);
+        console.log(document.getElementById('Projects-div').scrollWidth);
     }
 
     render() {
         return (
             <div id="Portfolio-item" className="All-portfolio">
                 <div className="Stretcher">
-                    <h1>PORTFOLIO</h1>
+                    <h1 onClick={this.mesureDimension.bind(this)}>PORTFOLIO</h1>
                     <div className="Outer-projects-div">
                         <div onClick={this.scrollLeft} className="Arrow-left"></div>
                         <div onClick={this.scrollRight} className="Arrow-right"></div>
@@ -109,7 +120,7 @@ class Portfolio extends React.Component {
                             {this.state.projects.map(project => {
                                 return <Project key={project.name} allProjectsOff={this.state.allProjectsOff} onToggleOtherProjectsOff={this.toggleAllProjectsOff}
                                     thumbnail={project.thumbnail} name={project.name} technologies={project.technologies}
-                                    description={project.description} link={project.link} />
+                                    description={project.description} link={project.link} projectWidth={this.props.projectWidth} />
                             })}
                         </div>
                     </div>
@@ -143,14 +154,7 @@ class Project extends React.Component {
         this.props.technologies.map(technologie => {
 
             return technologies.push(
-                <div className={'Technology-' + technologie} key={this.props.name + '_' + technologie} style={{
-                    width: 50 + 'px',
-                    height: 50 + 'px',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
-                    marginRight: 15 + 'px'
-                }}></div>);
+                <div id={'Technology-' + technologie} className="Technology" key={this.props.name + '_' + technologie}></div>);
         })
         return technologies;
     }
@@ -167,20 +171,20 @@ class Project extends React.Component {
                 zIndex: this.state.visible ? '1' : ''
             }}>
                 <div onClick={this.state.visible ? this.goToLink : this.toggleDetailVisibility} style={{
-                    width: 550 + 'px', height: 100 + '%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain', backgroundColor: 'var(--my-black)', minWidth: 550 + 'px', cursor: 'pointer'
+                    width: this.props.projectWidth + 'px', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain', cursor: 'pointer', borderRadius: 3 + 'px'
                 }}
-                    className={'Thumbnail-' + this.props.thumbnail}></div>
+                    id={'Thumbnail-' + this.props.thumbnail} className="Thumbnail"></div>
                 <div className="Details" style={{ display: this.state.visible ? 'flex' : 'none' }}>
-                    <div style={{ display: 'flex' }}>
+                    <div className="Technologies" style={{ display: 'flex' }}>
                         <p style={{ fontWeight: 900, marginRight: 30 + 'px', alignSelf: 'center' }}>TECHNOLOGIE:</p>
                         {this.technologiesImageConvertor()}
                     </div>
                     <p style={{ fontWeight: 700 }}><span style={{ fontWeight: 900 }}>POPIS:</span>&#160;{this.props.description}</p>
-                    <div style={{ display: 'flex' }}>
-                        <p style={{ fontWeight: 900 }}>ODKAZ: </p>
-                        <a target="blank" style={{ fontWeight: 700, fontSize: 35 + 'px', textDecoration: 'none' }}
-                            href={this.props.link}>&#160;{this.props.link}</a>
+                    <div className="Link" style={{ display: 'flex' }}>
+                        <p style={{ fontWeight: 900 }}>ODKAZ:&#160;</p>
+                        <a target="blank" style={{ fontWeight: 700, textDecoration: 'none' }}
+                            href={this.props.link}>{this.props.link}</a>
                     </div>
                     <div onClick={this.toggleDetailVisibility} className="X"></div>
                 </div>

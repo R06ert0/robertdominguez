@@ -4,26 +4,37 @@ import './Nav.css';
 class Nav extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            triggerAnimation: true
-        }
 
         this.hideMenuProperly = this.hideMenuProperly.bind(this);
+        this.scrollTo = this.scrollTo.bind(this);
+        this.scrollToHome = this.scrollToHome.bind(this);
     }
 
     scrollTo(e) {
         switch (e.target.innerText) {
             case 'DOMŮ':
                 document.getElementById('Home-item').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (matchMedia('screen and (max-width: 800px), (max-width: 100vh)').matches) {
+                    this.hideMenuProperly();
+                }
                 break;
             case 'O MNĚ':
                 document.getElementById('About-item').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (matchMedia('screen and (max-width: 800px), (max-width: 100vh)').matches) {
+                    this.hideMenuProperly();
+                }
                 break;
             case 'PORTFOLIO':
                 document.getElementById('Portfolio-item').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (matchMedia('screen and (max-width: 800px), (max-width: 100vh)').matches) {
+                    this.hideMenuProperly();
+                }
                 break;
             case 'KONTAKT':
                 document.getElementById('Contact-item').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (matchMedia('screen and (max-width: 800px), (max-width: 100vh)').matches) {
+                    this.hideMenuProperly();
+                }
                 break;
             default:
                 break;
@@ -32,23 +43,19 @@ class Nav extends React.Component {
 
     scrollToHome() {
         document.getElementById('Home-item').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        this.hideMenuProperly();
     }
 
     hideMenuProperly() {
-        this.setState({
-            triggerAnimation: false
-        })
+        document.getElementById('LOGO-ID').style.animation = 'Hide-menu-logo 1s ease forwards';
+        document.getElementById('Exit-ID').style.animation = 'Hide-menu-logo 1s ease forwards';
         document.getElementById('All-nav-ID').style.animation = 'Hide-menu 1s ease forwards';
 
         setTimeout(() => {
-            this.props.onHideMenu();
-            this.setState({
-                triggerAnimation: true
-            })
-        }, 900);
-
-        setTimeout(() => {
             document.getElementById('All-nav-ID').style.display = 'none';
+            document.getElementById('LOGO-ID').style.animation = 'Show-menu-logo 1s ease forwards';
+            document.getElementById('Exit-ID').style.animation = 'Show-menu-logo 1s ease forwards';
+            this.props.onHideMenu();
         }, 900);
     }
 
@@ -56,20 +63,17 @@ class Nav extends React.Component {
         return (
             <nav id="All-nav-ID" className="All-nav" style={{
                 display: this.props.menuVisibile ? 'block' : 'none',
-                animation: this.props.menuVisibile ? 'Show-menu 1s ease forwards' : 'Hide-menu 1s ease forwards'
+                animation: this.props.menuVisibile ? 'Show-menu 1s ease forwards' : 'Hide-menu 1s ease forwards',
+                zIndex: 5
             }}>
                 <div className="Stretcher">
                     <div className="Nav-items-div" style={{ display: 'flex', height: 100 + '%', width: 100 + '%', alignItems: 'center' }}>
-                        <div onClick={this.scrollToHome} className="LOGO" style={{
-                            animation: this.state.triggerAnimation ? 'Show-menu-logo 1s ease forwards' : 'Hide-menu-logo 1s ease forwards'
-                        }}></div>
+                        <div id="LOGO-ID" onClick={this.scrollToHome} className="LOGO"></div>
                         <li onClick={this.scrollTo}>DOMŮ</li>
                         <li onClick={this.scrollTo}>O MNĚ</li>
                         <li onClick={this.scrollTo}>PORTFOLIO</li>
                         <li onClick={this.scrollTo}>KONTAKT</li>
-                        <div onClick={this.hideMenuProperly} className="Exit-item" style={{
-                            animation: this.state.triggerAnimation ? 'Show-menu-logo 1s ease forwards' : 'Hide-menu-logo 1s ease forwards'
-                        }}></div>
+                        <div id="Exit-ID" onClick={this.hideMenuProperly} className="Exit-item"></div>
                     </div>
                 </div>
             </nav>

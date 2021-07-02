@@ -31,7 +31,7 @@
     align-items: center;
     height: 446px;
     width: 604px;
-    background-color: #fff;
+    background-color: var(--my-white);
     opacity: 0;
 }
 
@@ -48,7 +48,7 @@
 
 .All-contact .Thanks-icon::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     background-image: url("../../Assets/Loading.svg");
@@ -72,7 +72,7 @@
 
 .All-contact .Thanks-icon-done::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     background-image: url("../../Assets/Loading-done-check.svg");
@@ -96,7 +96,7 @@
 
 .All-contact .Thanks-icon-wrong::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     background-image: url("../../Assets/Loading-wrong.svg");
@@ -283,11 +283,154 @@
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1366px) {
     .All-contact {
         width: 100vw;
         height: 100vh;
         min-height: 650px;
         max-height: 700px;
+    }
+}
+
+@media screen and (max-width: 800px), (max-width: 100vh) {
+    .All-contact {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .All-contact h1 {
+        top: 5vh;
+    }
+
+    .All-contact form {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .All-contact .Copyright::after {
+        content: "\a";
+        white-space: pre;
+    }
+
+    .All-contact .Footer {
+        height: 8vh;
+        bottom: 0;
+    }
+
+    .All-contact .Footer .Linked-in {
+        width: 4vh;
+        height: 4vh;
+    }
+
+    .All-contact .Footer .Linked-in:hover {
+        background-image: url("../../Assets/LinkedIn.svg");
+    }
+
+    .All-contact .Footer .Linked-in:active {
+        background-image: url("../../Assets/LinkedIn-filled.svg");
+    }
+
+    .All-contact .Footer .Facebook {
+        width: 4vh;
+        height: 4vh;
+    }
+
+    .All-contact .Footer .Facebook:hover {
+        background-image: url("../../Assets/Facebook.svg");
+    }
+
+    .All-contact .Footer .Facebook:active {
+        background-image: url("../../Assets/Facebook-filled.svg");
+    }
+
+    .All-contact input {
+        width: 80vw;
+        height: 10vw;
+        border-radius: 0.5vh;
+        font-size: 2vh;
+        padding: 0 1vh;
+    }
+
+    .All-contact input::placeholder {
+        font-size: 2vh;
+    }
+
+    .All-contact textarea {
+        width: 80vw;
+        height: 30vw;
+        border-radius: 0.5vh;
+        font-size: 2vh;
+        padding: 1vh;
+    }
+
+    .All-contact textarea::placeholder {
+        font-size: 2vh;
+    }
+
+    .All-contact form button {
+        width: 30vw;
+        height: 10vw;
+        font-size: 2.5vh;
+        border: 0.3vh solid var(--my-white);
+        border-radius: 0.5vh;
+    }
+
+    .All-contact form button:hover {
+        color: var(--my-white);
+    }
+
+    .All-contact form button:active {
+        background-color: var(--my-white);
+        color: var(--my-blue);
+    }
+
+    .All-contact form button:hover::before {
+        content: none;
+    }
+
+    .All-contact .Footer p {
+        font-size: 2vh;
+        margin-left: 2vh;
+    }
+
+    .All-contact .Footer .Icons {
+        margin-right: 2vh;
+        gap: 2vh;
+    }
+
+    .All-contact .Form-thanks {
+        border-radius: 1vh;
+        margin-top: 0;
+        height: 40vh;
+        width: 90vw;
+        background-color: var(--my-white);
+    }
+    
+    .All-contact .Thanks-icon {
+        width: 20vh;
+        height: 20vh;
+        margin-top: 6vh;
+    }
+    
+    .All-contact .Thanks-icon-done {
+        width: 20vh;
+        height: 20vh;
+        margin-top: 6vh;
+    }
+
+    .All-contact .Thanks-icon-wrong {
+        width: 20vh;
+        height: 20vh;
+        margin-top: 6vh;
+    }
+    
+    .All-contact .Thanks-text {
+        font-size: 8vw;
+        margin-top: 2vh;
     }
 }

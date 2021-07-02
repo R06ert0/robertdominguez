@@ -25,9 +25,11 @@
 
 .All-portfolio .Outer-projects-div .Arrow-left {
     position: absolute;
-    height: 95px;
-    width: 95px;
-    background-image: url('../../Assets/Arrow-left.svg');
+    width: 4.25vw;
+    height: 4.25vw;
+    max-width: 95px;
+    max-height: 95px;
+    background-image: url("../../Assets/Arrow-left.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -38,9 +40,11 @@
 
 .All-portfolio .Outer-projects-div .Arrow-right {
     position: absolute;
-    height: 95px;
-    width: 95px;
-    background-image: url('../../Assets/Arrow-right.svg');
+    width: 4.25vw;
+    height: 4.25vw;
+    max-width: 95px;
+    max-height: 95px;
+    background-image: url("../../Assets/Arrow-right.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -51,8 +55,10 @@
 
 .All-portfolio #Projects-div {
     position: relative;
-    width: 1760px;
-    height: 350px;
+    width: 91.5vw;
+    max-width: 1760px;
+    height: 17vw;
+    max-height: 350px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,17 +67,18 @@
 
 .All-portfolio .All-project {
     position: relative;
-    border: 3px solid var(--my-black);
     border-radius: 5px;
     display: flex;
-    width: fit-content;
-    height: 307px;
+    height: 16vw;
+    max-height: 310px;
     justify-content: center;
-    margin: 0 15px;
+    margin: 0 var(--project-margin);
+    background-color: var(--my-black);
+    border: 3px solid var(--my-black);
 }
 
 .All-portfolio .All-project:hover {
-    box-shadow:  4px 4px 4px var(--my-dark-grey);
+    box-shadow: 0.5vh 0.5vh 0.5vh var(--my-dark-grey);
     transition: 0.3s ease;
 }
 
@@ -81,7 +88,6 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 6.5px 30px;
-    background-color: var(--my-black);
     color: var(--my-white);
     width: 0;
     animation: Wide-details 0.5s ease forwards;
@@ -89,8 +95,11 @@
 }
 
 @keyframes Wide-details {
-    0% {}
-    100% {width: 1114px;}
+    0% {
+    }
+    100% {
+        width: var(--details-width);
+    }
 }
 
 .All-portfolio .All-project .Details a {
@@ -108,7 +117,7 @@
     width: 40px;
     top: 10px;
     right: 10px;
-    background-image: url('../../Assets/X.svg');
+    background-image: url("../../Assets/X.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -125,62 +134,254 @@
     bottom: 0;
     width: 0;
     height: 0;
-    border-top: 110px solid  var(--my-orange);
+    border-top: 110px solid var(--my-orange);
     border-left: 50vw solid var(--my-blue);
     border-right: 50vw solid var(--my-blue);
 }
 
-
+.All-portfolio .Technology {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 15px;
+}
 
 /* THUMBNAIL IMAGE CHANGERS */
-.All-portfolio .Thumbnail-onlinecourses {
-    background-image: url('../../Assets/OnlineCourses.png');
+.All-portfolio #Thumbnail-onlinecourses {
+    background-image: url("../../Assets/OnlineCourses.png");
 }
 
-.All-portfolio .Thumbnail-farmersbrothers {
-    background-image: url('../../Assets/FarmersBrothers.png');
+.All-portfolio #Thumbnail-farmersbrothers {
+    background-image: url("../../Assets/FarmersBrothers.png");
 }
-
 
 /* BG IMAGES CHANGERS */
-.All-portfolio .Technology-HTML {
-    background-image: url('../../Assets/HTML5.svg');
+.All-portfolio #Technology-HTML {
+    background-image: url("../../Assets/HTML5.svg");
 }
 
-.All-portfolio .Technology-CSS {
-    background-image: url('../../Assets/CSS3.svg');
+.All-portfolio #Technology-CSS {
+    background-image: url("../../Assets/CSS3.svg");
 }
 
-.All-portfolio .Technology-JavaScript {
-    background-image: url('../../Assets/JavaScript.svg');
+.All-portfolio #Technology-JavaScript {
+    background-image: url("../../Assets/JavaScript.svg");
 }
 
-.All-portfolio .Technology-TypeScript {
-    background-image: url('../../Assets/TypeScript.svg');
+.All-portfolio #Technology-TypeScript {
+    background-image: url("../../Assets/TypeScript.svg");
 }
 
-.All-portfolio .Technology-Angular {
-    background-image: url('../../Assets/Angular.svg');
+.All-portfolio #Technology-Angular {
+    background-image: url("../../Assets/Angular.svg");
 }
 
-.All-portfolio .Technology-ReactJS {
-    background-image: url('../../Assets/React.svg');
+.All-portfolio #Technology-ReactJS {
+    background-image: url("../../Assets/React.svg");
 }
 
-.All-portfolio .Technology-NestJS {
-    background-image: url('../../Assets/NestJS.svg');
+.All-portfolio #Technology-NestJS {
+    background-image: url("../../Assets/NestJS.svg");
 }
 
-.All-portfolio .Technology-PostgreSQL {
-    background-image: url('../../Assets/Postgresql.svg');
+.All-portfolio #Technology-PostgreSQL {
+    background-image: url("../../Assets/Postgresql.svg");
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1800px) {
+    .All-portfolio .Outer-projects-div .Arrow-right {
+        top: calc(50% - 2.125vw);
+    }
+
+    .All-portfolio .Outer-projects-div .Arrow-left {
+        top: calc(50% - 2.125vw);
+    }
+}
+
+@media screen and (max-width: 1366px) {
     .All-portfolio {
         width: 100vw;
         height: 100vh;
         min-height: 650px;
         max-height: 700px;
+        padding-bottom: 85px;
+    }
+
+    .All-portfolio h1 {
+        top: 78px;
+    }
+
+    .All-portfolio .Triangle {
+        border-top: 85px solid var(--my-orange);
+    }
+
+    .All-portfolio .Technology {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
+
+    .All-portfolio .All-project .Details .X {
+        height: 30px;
+        width: 30px;
+        top: 7px;
+        right: 7px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .All-portfolio {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+        padding-bottom: 85px;
+    }
+
+    .All-portfolio #Projects-div {
+        width: 91.5vw;
+        height: 17vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: scroll;
+    }
+
+    .All-portfolio .All-project .Details {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 6.5px 30px;
+        color: var(--my-white);
+        width: 0;
+        animation: Wide-details 0.5s ease forwards;
+        overflow: hidden;
+    }
+
+    .All-portfolio .Technology {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .All-portfolio .All-project .Details .X {
+        height: 25px;
+        width: 25px;
+        top: 5px;
+        right: 5px;
+    }
+}
+
+@media screen and (max-width: 800px), (max-width: 100vh) {
+    .All-portfolio {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+        padding-bottom: 85px;
+    }
+
+    .All-portfolio h1 {
+        top: 5vh;
+    }
+
+    .All-portfolio .All-project {
+        border-radius: 0.5vh;
+        display: flex;
+        flex-direction: column;
+        height: 76vh;
+        max-height: 80vh;
+        min-height: 51vw;
+        margin: var(--project-margin) 0;
+        border: 3px solid var(--my-black);
+        box-shadow: 0.2vh 0.2vh 0.2vh var(--my-dark-grey);
+    }
+
+    .All-portfolio .All-project:hover {
+        box-shadow: 0.2vh 0.2vh 0.2vh var(--my-dark-grey);
+        transition: none;
+    }
+
+    .All-portfolio #Projects-div {
+        border-radius: 0.5vh;
+        top: 6vh;
+        width: 90vw;
+        height: 78vh;
+        max-height: 78vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .Thumbnail {
+        height: 51vw;
+        min-height: 51vw;
+    }
+
+    .All-portfolio .All-project .Details {
+        padding: 2vh 1vh;
+        margin: 0;
+        height: 0;
+        min-height: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: var(--my-white);
+        min-width: calc(100% - 2vh);
+        animation: Spread-details 0.5s ease forwards;
+        overflow: visible;
+    }
+
+    .All-portfolio .Technologies {
+        flex-wrap: wrap;
+    }
+
+    .All-portfolio .Technology {
+        width: 4vh;
+        height: 4vh;
+        margin-right: 10px;
+    }
+
+    .All-portfolio .Link {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .All-portfolio .Link a {
+        word-break: break-all;
+    }
+
+    .All-portfolio .All-project .Details .X {
+        z-index: 4;
+        height: 4vh;
+        width: 4vh;
+        top: -50vw;
+        right: 2vw;
+        background-image: url("../../Assets/X-red.svg");
+    }
+
+    .All-portfolio .All-project .Details .X:hover {
+        transform: none;
+    }
+
+    @keyframes Spread-details {
+        0% {
+        }
+        100% {
+            height: calc(80vh - 51vw);
+        }
+    }
+
+    .All-portfolio .Outer-projects-div .Arrow-left {
+        display: none;
+    }
+
+    .All-portfolio .Outer-projects-div .Arrow-right {
+        display: none;
     }
 }
