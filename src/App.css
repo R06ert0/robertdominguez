@@ -5,10 +5,10 @@
 @media screen and (max-width: 800px), (max-width: 100vh) {
     #Almighty-div .Hamburger {
         position: fixed;
-        height: 15vh;
-        width: 15vh;
-        bottom: 0;
-        right: 20px;
+        height: 10vh;
+        width: 10vh;
+        top: 1.5vh;
+        right: 2vh;
         background-image: url("./Assets/Hamburger.svg");
         background-repeat: no-repeat;
         background-size: cover;

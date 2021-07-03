@@ -74,7 +74,8 @@
         align-items: center;
         height: 100%;
         width: 0;
-        border-left: 4px solid var(--my-orange);
+        max-width: 500px;
+        border-left: 0.5vh solid var(--my-orange);
         color: var(--my-white);
         background-color: var(--my-black);
         z-index: 5;

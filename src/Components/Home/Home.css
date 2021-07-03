@@ -149,6 +149,7 @@
 
     .All-home .Big-button {
         font-size: 4.5vh;
+        min-width: fit-content;
         margin-top: 5vh;
         width: 35vh;
         height: 8vh;

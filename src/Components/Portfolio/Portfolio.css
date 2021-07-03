@@ -281,7 +281,7 @@
         height: 100vh;
         min-height: 100vh;
         max-height: 100vh;
-        padding-bottom: 85px;
+        padding-bottom: 15vh;
     }
 
     .All-portfolio h1 {
@@ -295,8 +295,8 @@
         height: 76vh;
         max-height: 80vh;
         min-height: 51vw;
-        margin: var(--project-margin) 0;
-        border: 3px solid var(--my-black);
+        margin: 1vh 0;
+        border: 0.4vh solid var(--my-black);
         box-shadow: 0.2vh 0.2vh 0.2vh var(--my-dark-grey);
     }
 
@@ -306,7 +306,7 @@
     }
 
     .All-portfolio #Projects-div {
-        border-radius: 0.5vh;
+        border-radius: 1vh;
         top: 6vh;
         width: 90vw;
         height: 78vh;
@@ -383,5 +383,9 @@
 
     .All-portfolio .Outer-projects-div .Arrow-right {
         display: none;
+    }
+
+    .All-portfolio .Triangle {
+        border-top: 10vh solid var(--my-orange);
     }
 }
