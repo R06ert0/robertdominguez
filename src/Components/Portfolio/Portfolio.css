@@ -293,6 +293,7 @@
         display: flex;
         flex-direction: column;
         height: 76vh;
+        width: 95%;
         max-height: 80vh;
         min-height: 51vw;
         margin: 1vh 0;

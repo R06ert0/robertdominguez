@@ -171,7 +171,7 @@ class Project extends React.Component {
                 zIndex: this.state.visible ? '1' : ''
             }}>
                 <div onClick={this.state.visible ? this.goToLink : this.toggleDetailVisibility} style={{
-                    width: this.props.projectWidth + 'px', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+                    width: 100 + '%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain', cursor: 'pointer', borderRadius: 3 + 'px'
                 }}
                     id={'Thumbnail-' + this.props.thumbnail} className="Thumbnail"></div>

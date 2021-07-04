@@ -147,6 +147,10 @@
         justify-content: space-around;
     }
 
+    .All-home::before {
+        width: 150%;
+    }
+
     .All-home .Big-button {
         font-size: 4.5vh;
         min-width: fit-content;

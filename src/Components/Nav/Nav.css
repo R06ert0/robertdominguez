@@ -74,7 +74,6 @@
         align-items: center;
         height: 100%;
         width: 0;
-        max-width: 500px;
         border-left: 0.5vh solid var(--my-orange);
         color: var(--my-white);
         background-color: var(--my-black);
@@ -84,8 +83,8 @@
 
     @keyframes Show-menu {
         from {
-            letter-spacing: 2vh;
-            text-indent: 200%;
+            letter-spacing: 4vh;
+            text-indent: 300%;
             text-align: left;
         }
         to {
@@ -98,7 +97,7 @@
 
     @keyframes Show-menu-logo {
         from {
-            transform: translateX(30vh);
+            transform: translateX(50vh);
         }
         to {
             transform: translateX(0);
@@ -114,8 +113,8 @@
         }
         to {
             width: 0%;
-            letter-spacing: 2vh;
-            text-indent: 100%;
+            letter-spacing: 4vh;
+            text-indent: 200%;
             text-align: left;
         }
     }
@@ -125,7 +124,7 @@
             transform: translateX(0);
         }
         to {
-            transform: translateX(30vh);
+            transform: translateX(50vh);
         }
     }
 
