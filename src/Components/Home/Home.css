@@ -38,7 +38,7 @@
     font-weight: bold;
 }
 
-.All-home h1 span {
+.All-home .H1-my-name {
     font-weight: bolder;
     color: var(--my-black);
     font-size: 60px;
@@ -129,8 +129,9 @@
         height: 64px;
     }
 
-    .All-home h1 span {
+    .All-home .H1-my-name {
         font-size: 50px;
+        font-weight: bolder;
     }
 }
 
@@ -143,7 +144,7 @@
         max-height: 100vh;
     }
 
-    .All-home h1 span {
+    .All-home .H1-my-name {
         font-size: 50px;
         font-weight: bolder;
     }
@@ -157,6 +158,7 @@
         min-height: 100vh;
         max-height: 100vh;
         justify-content: center;
+        align-items: center;
     }
 
     .All-home::before {
@@ -248,8 +250,9 @@
         font-weight: 900;
     }
 
-    .All-home h1 span {
-        font-size: 50px;
+    .All-home .H1-my-name {
+        font-size: 5vh;
+        font-weight: bolder;
     }
 
     .All-home .Second-h1 {

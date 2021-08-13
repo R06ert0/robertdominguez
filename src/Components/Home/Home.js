@@ -11,7 +11,7 @@ class Home extends React.Component {
             <div id="Home-item" className="All-home">
                 <h1>Ahoj &#128075;, jmenuji se</h1>
                 <br></br>
-                <h1><span>Robert Dominguez</span></h1>
+                <h1 className='H1-my-name'>Robert Dominguez</h1>
                 <br></br>
                 <h1>a jsem začínající softwarový vývojář.</h1>
                 <h1 className="Second-h1">Níže se můžeš podívat na moje portfolio.</h1>
