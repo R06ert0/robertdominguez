@@ -73,7 +73,7 @@
         flex-direction: column;
         align-items: center;
         height: 100%;
-        width: 0;
+        width: 80%;
         border-left: 0.5vh solid var(--my-orange);
         color: var(--my-white);
         background-color: var(--my-black);
@@ -83,48 +83,21 @@
 
     @keyframes Show-menu {
         from {
-            letter-spacing: 4vh;
-            text-indent: 300%;
-            text-align: left;
-        }
-        to {
-            width: 80%;
-            letter-spacing: 0;
-            text-indent: 0;
-            text-align: center;
-        }
-    }
-
-    @keyframes Show-menu-logo {
-        from {
-            transform: translateX(50vh);
+            transform: translateX(100%);
         }
         to {
             transform: translateX(0);
+            display: block;
         }
     }
 
     @keyframes Hide-menu {
         from {
-            width: 80%;
-            letter-spacing: 0;
-            text-indent: 0;
-            text-align: center;
-        }
-        to {
-            width: 0%;
-            letter-spacing: 4vh;
-            text-indent: 200%;
-            text-align: left;
-        }
-    }
-
-    @keyframes Hide-menu-logo {
-        from {
             transform: translateX(0);
         }
         to {
-            transform: translateX(50vh);
+            transform: translateX(100%);
+            display: none;
         }
     }
 
@@ -146,7 +119,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 4vh;
-        margin-bottom: 30vh;
+        margin-bottom: 20vh;
     }
 
     .All-nav li {
@@ -163,6 +136,7 @@
     }
 
     .All-nav .LOGO {
+        margin-bottom: 5vh;
         cursor: pointer;
         height: 20vh;
         width: 20vh;

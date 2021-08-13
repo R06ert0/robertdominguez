@@ -9,12 +9,13 @@ class About extends React.Component {
             skillSet: [
                 { name: 'HTML', percentage: 80 },
                 { name: 'CSS', percentage: 80 },
-                { name: 'JavaScript', percentage: 50 },
+                { name: 'JavaScript', percentage: 70 },
                 { name: 'TypeScript', percentage: 35 },
+                { name: 'ReactJS', percentage: 50 },
                 { name: 'Angular', percentage: 25 },
-                { name: 'ReactJS', percentage: 25 },
                 { name: 'NestJS', percentage: 20 },
-                { name: 'Git', percentage: 25 },
+                { name: 'AJAX', percentage: 30 },
+                { name: 'Git', percentage: 30 },
                 { name: 'Figma', percentage: 50 },
                 { name: 'Blender', percentage: 25 }
             ]

@@ -91,7 +91,7 @@
     color: var(--my-white);
     width: 0;
     animation: Wide-details 0.5s ease forwards;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 @keyframes Wide-details {
@@ -291,11 +291,11 @@
     .All-portfolio .All-project {
         border-radius: 0.5vh;
         display: flex;
+        justify-content: center;
         flex-direction: column;
         height: 76vh;
         width: 95%;
-        max-height: 80vh;
-        min-height: 51vw;
+        max-height: 76vh;
         margin: 1vh 0;
         border: 0.4vh solid var(--my-black);
         box-shadow: 0.2vh 0.2vh 0.2vh var(--my-dark-grey);
@@ -310,6 +310,7 @@
         border-radius: 1vh;
         top: 6vh;
         width: 90vw;
+        max-width: 50vh;
         height: 78vh;
         max-height: 78vh;
         display: flex;
@@ -319,15 +320,14 @@
     }
 
     .Thumbnail {
-        height: 51vw;
-        min-height: 51vw;
+        height: 30vh;
+        max-height: 51vw;
     }
 
     .All-portfolio .All-project .Details {
         padding: 2vh 1vh;
         margin: 0;
         height: 0;
-        min-height: 0;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -335,7 +335,7 @@
         color: var(--my-white);
         min-width: calc(100% - 2vh);
         animation: Spread-details 0.5s ease forwards;
-        overflow: visible;
+        overflow: scroll;
     }
 
     .All-portfolio .Technologies {
@@ -357,24 +357,33 @@
         word-break: break-all;
     }
 
-    .All-portfolio .All-project .Details .X {
+    .All-portfolio .All-project .X-mobile {
+        position: absolute;
+        background-image: url("../../Assets/X-red.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
         z-index: 4;
         height: 4vh;
         width: 4vh;
-        top: -50vw;
-        right: 2vw;
-        background-image: url("../../Assets/X-red.svg");
+        top: 1vh;
+        right: 1vh;
     }
 
-    .All-portfolio .All-project .Details .X:hover {
+    .All-portfolio .All-project .X-mobile:hover {
         transform: none;
     }
 
     @keyframes Spread-details {
         0% {
+            height: 0;
+            min-height: 10vh;
         }
         100% {
             height: calc(80vh - 51vw);
+            min-height: 45vh;
+            max-height: 50vh;
         }
     }
 

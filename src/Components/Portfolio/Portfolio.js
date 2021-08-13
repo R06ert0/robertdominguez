@@ -112,7 +112,7 @@ class Portfolio extends React.Component {
         return (
             <div id="Portfolio-item" className="All-portfolio">
                 <div className="Stretcher">
-                    <h1 onClick={this.mesureDimension.bind(this)}>PORTFOLIO</h1>
+                    <h1>PORTFOLIO</h1>
                     <div className="Outer-projects-div">
                         <div onClick={this.scrollLeft} className="Arrow-left"></div>
                         <div onClick={this.scrollRight} className="Arrow-right"></div>
@@ -171,7 +171,7 @@ class Project extends React.Component {
                 zIndex: this.state.visible ? '1' : ''
             }}>
                 <div onClick={this.state.visible ? this.goToLink : this.toggleDetailVisibility} style={{
-                    width: 100 + '%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+                    width: (matchMedia('screen and (max-width: 800px), (max-width: 100vh)').matches) ? 100 + '%' : this.props.projectWidth + 'px', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain', cursor: 'pointer', borderRadius: 3 + 'px'
                 }}
                     id={'Thumbnail-' + this.props.thumbnail} className="Thumbnail"></div>
@@ -186,8 +186,9 @@ class Project extends React.Component {
                         <a target="blank" style={{ fontWeight: 700, textDecoration: 'none' }}
                             href={this.props.link}>{this.props.link}</a>
                     </div>
-                    <div onClick={this.toggleDetailVisibility} className="X"></div>
+                    {!(matchMedia('screen and (max-width: 800px), (max-width: 100vh)').matches) && <div onClick={this.toggleDetailVisibility} className="X"></div>}
                 </div>
+                {(matchMedia('screen and (max-width: 800px), (max-width: 100vh)').matches && this.state.visible) && <div onClick={this.toggleDetailVisibility} className="X-mobile"></div>}
             </div>
         )
     }

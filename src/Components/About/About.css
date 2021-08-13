@@ -74,12 +74,12 @@
 }
 
 .All-about .Circle-skills {
-    background-image: url("../../Assets/Profile-picture-skills.jpg");
+    background-image: url("../../Assets/Profile-picture-skills.png");
+    transition: background-image 0.75s ease;
 }
 
 .All-about .Circle-skills:hover {
-    background-image: url("../../Assets/Profile-picture-skills-full.jpg");
-    transition: 1s ease;
+    background-image: url("../../Assets/Profile-picture-skills-full.png");
 }
 
 @keyframes FlipIt {
@@ -261,7 +261,7 @@
     }
 
     .All-about .Circle-skills:hover {
-        background-image: url("../../Assets/Profile-picture-skills.jpg");
+        background-image: url("../../Assets/Profile-picture-skills.png");
         transition: 0s;
     }
 
@@ -361,7 +361,8 @@
         justify-content: center;
         align-items: center;
         height: 46vh;
-        padding: 7vh 0;
+        margin: 7vh 0;
+        overflow-y: scroll;
     }
 
     .All-about .Content-text {
@@ -373,7 +374,7 @@
 
     .All-about .Content-skills {
         display: flex;
-        gap: 0.5vh;
+        gap: 1vh;
         flex-direction: column;
         width: 90%;
         height: 100%;
@@ -385,7 +386,7 @@
     }
 
     .All-about .Circle-skills:hover {
-        background-image: url("../../Assets/Profile-picture-skills.jpg");
+        background-image: url("../../Assets/Profile-picture-skills.png");
         transition: 0s;
     }
 

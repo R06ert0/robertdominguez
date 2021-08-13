@@ -47,22 +47,12 @@ class Nav extends React.Component {
     }
 
     hideMenuProperly() {
-        document.getElementById('LOGO-ID').style.animation = 'Hide-menu-logo 0.5s ease forwards';
-        document.getElementById('Exit-ID').style.animation = 'Hide-menu-logo 0.5s ease forwards';
-        document.getElementById('All-nav-ID').style.animation = 'Hide-menu 0.5s ease forwards';
-
-        setTimeout(() => {
-            document.getElementById('All-nav-ID').style.display = 'none';
-            document.getElementById('LOGO-ID').style.animation = 'Show-menu-logo 0.5s ease forwards';
-            document.getElementById('Exit-ID').style.animation = 'Show-menu-logo 0.5s ease forwards';
-            this.props.onHideMenu();
-        }, 450);
+        this.props.onHideMenu();
     }
 
     render() {
         return (
             <nav id="All-nav-ID" className="All-nav" style={{
-                display: this.props.menuVisibile ? 'block' : 'none',
                 animation: this.props.menuVisibile ? 'Show-menu 0.5s ease forwards' : 'Hide-menu 0.5s ease forwards',
                 zIndex: 5
             }}>
